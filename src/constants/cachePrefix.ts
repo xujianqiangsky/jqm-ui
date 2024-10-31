@@ -1,0 +1,9 @@
+const TOKEN_PREFIX = 'tokenInfo';
+
+const AUTHENTICATED_STATUS_PREFIX = 'isAuthenticated';
+
+const MENU_PREFIX = 'menuList';
+
+const USER_INFO_PREFIX = 'userInfo';
+
+export { TOKEN_PREFIX, AUTHENTICATED_STATUS_PREFIX, MENU_PREFIX, USER_INFO_PREFIX };

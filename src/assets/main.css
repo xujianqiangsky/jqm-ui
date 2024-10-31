@@ -1,0 +1,51 @@
+@import './base.css';
+
+#app {
+  width: 100%;
+  height: 100vh;
+
+  --jqm-layout-bg-color: #f5f6f7;
+  --jqm-component-bg-color: #fff;
+  --jqm-aside-bg-color: var(--jqm-component-bg-color);
+  --jqm-header-bg-color: var(--jqm-component-bg-color);
+  --jqm-main-bg-color: var(--jqm-component-bg-color);
+  --jqm-modal-bg-color: rgba(0, 0, 0, 0.5);
+  --jqm-transition-duration-medium: 0.5s;
+  --jqm-transition-duration-slow: 0.8s;
+}
+
+.dark #app {
+  --jqm-layout-bg-color: #14161a;
+  --jqm-component-bg-color: #1c1e23;
+  --jqm-aside-bg-color: var(--jqm-component-bg-color);
+  --jqm-header-bg-color: var(--jqm-component-bg-color);
+  --jqm-main-bg-color: var(--jqm-component-bg-color);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: var(--el-transition-fade);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition:
+    transform var(--el-transition-duration) var(--el-transition-function-ease-in-out-bezier),
+    opacity var(--el-transition-duration) var(--el-transition-function-ease-in-out-bezier);
+}
+
+.slide-fade-leave-active {
+  transition:
+    transform var(--jqm-transition-duration-medium) var(--el-transition-function-ease-in-out-bezier),
+    opacity var(--jqm-transition-duration-medium) var(--el-transition-function-ease-in-out-bezier);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
