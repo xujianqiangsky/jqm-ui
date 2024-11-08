@@ -57,8 +57,8 @@ async function doLogout() {
     </el-menu-item>
     <el-sub-menu index="3" class="user-info">
       <template #title>
-        <el-avatar :src="userStore.userInfo.avatar" />
-        <span class="user-info__name">{{ userStore.userInfo.username }}</span>
+        <el-avatar :src="userStore.userInfo?.avatar" />
+        <span class="user-info__name">{{ userStore.userInfo?.username }}</span>
       </template>
       <el-menu-item index="3-2" @click="doLogout">退出登录</el-menu-item>
     </el-sub-menu>

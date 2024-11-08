@@ -1,5 +1,21 @@
 import { request } from '@/api/request';
 
+export function getUserById(id: string) {
+  return request.get<Result<User>>(`/admin/user/${id}`);
+}
+
+export function editUserById(user: User) {
+  return request.put('/admin/user/change', user);
+}
+
+export function removeUserById(id: string) {
+  return request.delete(`/admin/user/${id}`);
+}
+
+export function changeUserStatus(id: string, status: number) {
+  return request.put(`/admin/user/status/${id}/${status}`);
+}
+
 export function getLoginUserInfo() {
   return request.get<Result<User>>('/admin/user');
 }

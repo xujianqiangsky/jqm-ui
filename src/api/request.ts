@@ -3,7 +3,7 @@ import { getTokenInfo } from '@/utils/tokenUtils';
 import { clearAllCache } from '@/utils/clearCache';
 
 const instance = axios.create({
-  baseURL: 'http://127.0.0.1:12000/api',
+  baseURL: 'http://jqm.plus/api',
   timeout: 3000
 });
 

@@ -2,6 +2,7 @@ interface User {
   id?: string;
   username?: string;
   password?: string;
+  confirmPassword?: string;
   name?: string;
   deptId?: string;
   gender?: number;

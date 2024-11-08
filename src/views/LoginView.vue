@@ -6,11 +6,12 @@ import { useRouter } from 'vue-router';
 import { getDynamicRoutes } from '@/router/dynamicRoutes';
 import { useUserStore } from '@/stores/user';
 import { getLoginUserInfo } from '@/api/core/user';
+import { useThrottleFn } from '@vueuse/core';
 
 const loginUser = ref<LoginUser>({ username: '', password: '' });
 const router = useRouter();
 
-async function onSubmit() {
+const handleLoginEvent = useThrottleFn(async () => {
   const response = await login(loginUser.value);
   const result = response.data;
   if (result.data?.tokenValue) {
@@ -23,7 +24,7 @@ async function onSubmit() {
     ElNotification.success({ message: '登录成功' });
     router.replace('/');
   }
-}
+}, 1000);
 </script>
 
 <template>
@@ -42,7 +43,7 @@ async function onSubmit() {
             placeholder="请输入密码" />
         </el-form-item>
         <el-form-item>
-          <el-button class="login-btn" type="primary" @click="onSubmit">登录</el-button>
+          <el-button class="login-btn" type="primary" @click="handleLoginEvent">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
